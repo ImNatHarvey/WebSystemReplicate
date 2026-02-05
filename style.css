@@ -1,0 +1,29 @@
+/* Import Google Font 'Oswald' to mimic Riot's industrial sans-serif style */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
+
+/* Basic Reset & Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Font is applied via Tailwind 'font-sans' class in HTML, but defined here for fallback */
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Custom Scrollbar (Optional - to match the dark theme) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d13639; /* Riot Red on hover */
+}

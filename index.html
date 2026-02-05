@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riot Games: The Player-Focused Game Developer</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'riot-red': '#d13639',
+                        'riot-red-hover': '#b02a2d',
+                        'riot-black': '#111111',
+                        'riot-gray': '#292929',
+                    },
+                    fontFamily: {
+                        sans: ['"Oswald"', 'sans-serif'], /* Close alternative to Riot's font */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-riot-black text-white font-sans antialiased">
+
+    <nav class="fixed top-0 w-full z-50 px-8 py-5 flex justify-between items-center transition-all duration-300 bg-gradient-to-b from-black/80 to-transparent hover:bg-black/90">
+        
+        <div class="flex items-center space-x-8">
+            <a href="#" class="block w-28 opacity-100 hover:opacity-80 transition-opacity">
+                <img src="icons/fullicon.png" alt="Riot Games" class="w-full filter invert"> 
+            </a>
+
+            <div class="hidden lg:block h-6 w-px bg-white/20 rounded"></div>
+
+            <a href="#" class="hidden lg:block text-2xl hover:text-riot-red transition-colors">
+                <i class="fa-brands fa-accessible-icon"></i> </a>
+
+            <ul class="hidden lg:flex space-x-8 text-[13px] font-bold tracking-widest uppercase">
+                <li><a href="#" class="hover:text-riot-red hover:underline decoration-2 underline-offset-8 transition-all">Who We Are</a></li>
+                <li><a href="#" class="hover:text-riot-red hover:underline decoration-2 underline-offset-8 transition-all">Work With Us</a></li>
+                <li><a href="#" class="hover:text-riot-red hover:underline decoration-2 underline-offset-8 transition-all">News</a></li>
+            </ul>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <button class="text-xl hover:bg-white/10 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-globe"></i>
+            </button>
+
+            <div class="relative hidden md:block group">
+                <input type="text" placeholder="SEARCH" 
+                    class="bg-white/10 border border-transparent rounded-full px-5 py-2 pl-4 pr-10 text-xs font-bold tracking-wider placeholder-white/70 focus:outline-none focus:bg-white/20 focus:border-white/30 transition-all w-48 uppercase">
+                <i class="fa-solid fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-white/70"></i>
+            </div>
+
+            <a href="#" class="bg-riot-red hover:bg-riot-red-hover text-white text-[11px] font-bold uppercase tracking-widest px-6 py-3 rounded-xl transition-colors">
+                Sign In
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative w-full h-screen overflow-hidden flex items-center justify-center">
+        
+        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="mp4/hero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="absolute top-0 left-0 w-full h-full bg-black/20 z-10"></div>
+
+        <div class="relative z-20 text-center px-4">
+            </div>
+    </header>
+
+</body>
+</html>
