@@ -952,7 +952,6 @@ body {
     height: 32px;
     object-fit: contain;
     margin-bottom: 2rem;
-    filter: invert(1);
     opacity: 0.8;
 }
 
@@ -1101,6 +1100,104 @@ body {
     #game7:checked ~ .acc-container .card-rift {
         height: 500px;
         flex: none;
+    }
+}
+
+/* --- Commitments Section --- */
+.commitments-section {
+    background-color: #ebebeb; 
+    padding: 6rem 2rem;
+    color: var(--text-dark);
+}
+
+.commitments-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.commitments-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+}
+
+.commitments-grid {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.commitment-card {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.commitment-img-wrapper {
+    width: 100%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    transform: skewX(-6deg); /* The iconic Riot slanted card */
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    background-color: #000;
+}
+
+.commitment-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: skewX(6deg) scale(1.1); /* Counter-skew to keep image straight */
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    opacity: 0.9;
+}
+
+.commitment-card:hover .commitment-img {
+    transform: skewX(6deg) scale(1.15);
+    opacity: 1;
+}
+
+.commitment-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.02em;
+}
+
+.commitment-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--riot-red);
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    width: fit-content;
+    transition: border-color 0.3s;
+}
+
+.commitment-card:hover .commitment-link {
+    border-color: var(--riot-red);
+}
+
+/* Responsive Commitments */
+@media (max-width: 768px) {
+    .commitments-grid {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .commitment-img-wrapper {
+        transform: none;
+    }
+    .commitment-img {
+        transform: scale(1);
+    }
+    .commitment-card:hover .commitment-img {
+        transform: scale(1.05);
     }
 }
 
