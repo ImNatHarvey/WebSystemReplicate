@@ -666,6 +666,153 @@ body {
     background-color: var(--riot-red-hover);
 }
 
+/* --- Values Page Hero & Interactive Tabs --- */
+.values-hero {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Replicates the half-height look from your screenshots */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-main);
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-overlay);
+    z-index: 1;
+}
+
+/* Tab Logic Controllers (Hidden) */
+.tab-logic {
+    display: none;
+}
+
+/* Content visibility based on radio buttons */
+.values-center-content, .values-details-grid {
+    display: none;
+}
+
+#tab1:checked ~ .content-01, #tab1:checked ~ .values-grid-container .grid-01,
+#tab2:checked ~ .content-02, #tab2:checked ~ .values-grid-container .grid-02,
+#tab3:checked ~ .content-03, #tab3:checked ~ .values-grid-container .grid-03,
+#tab4:checked ~ .content-04, #tab4:checked ~ .values-grid-container .grid-04,
+#tab5:checked ~ .content-05, #tab5:checked ~ .values-grid-container .grid-05 { 
+    display: block; 
+}
+
+#tab1:checked ~ .values-grid-container .grid-01,
+#tab2:checked ~ .values-grid-container .grid-02,
+#tab3:checked ~ .values-grid-container .grid-03,
+#tab4:checked ~ .values-grid-container .grid-04,
+#tab5:checked ~ .values-grid-container .grid-05 { 
+    display: grid; 
+}
+
+/* Active Tab Styles */
+#tab1:checked ~ .values-nav .item-01,
+#tab2:checked ~ .values-nav .item-02,
+#tab3:checked ~ .values-nav .item-03,
+#tab4:checked ~ .values-nav .item-04,
+#tab5:checked ~ .values-nav .item-05 {
+    color: white;
+    border-bottom: 2px solid var(--riot-red);
+}
+
+.values-center-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    margin-top: -50px;
+    animation: fadeIn 0.5s ease;
+}
+
+.values-subtitle {
+    font-size: 1.25rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.values-title {
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 1rem 0;
+}
+
+.values-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--text-white);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Values Navigation Overlay */
+.values-nav {
+    position: absolute;
+    bottom: 30px;
+    z-index: 10;
+    display: flex;
+    gap: 2rem;
+}
+
+.v-nav-item {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    padding-bottom: 8px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.v-nav-item:hover {
+    color: white;
+}
+
+/* --- Four Column Details Grid --- */
+.values-grid-container {
+    background-color: #000;
+}
+
+.values-details-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 5rem 10%;
+    animation: fadeIn 0.5s ease;
+}
+
+.v-detail h4 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.v-detail p {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
 /* --- Footer --- */
 .riot-footer {
     background-color: #111;
